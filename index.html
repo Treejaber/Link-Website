@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Link — See which friends are nearby</title>
-<meta name="description" content="Link lets you share your whereabouts with the people you choose, see which friends are nearby, and make plans in a few taps. Built by LinkCalendar, LLC.">
+<meta name="description" content="Link is an app in development that lets you share your whereabouts with the people you choose, see which friends are nearby, and make plans in a few taps. Built by LinkCalendar, LLC.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='7' cy='16' r='4' fill='black'/%3E%3Ccircle cx='25' cy='16' r='4' fill='black'/%3E%3Cline x1='7' y1='16' x2='25' y2='16' stroke='black' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,26 +49,30 @@
   /* ---------- hero ---------- */
   main{flex:1 0 auto;display:flex;flex-direction:column;justify-content:center}
   .hero{padding:3rem 0}
-  h1{
-    font-family:"Instrument Serif",Georgia,serif;
-    font-weight:400;
-    font-size:clamp(2.6rem,7vw,4.6rem);
-    line-height:1.05;
-    letter-spacing:-.015em;
-    max-width:16ch;
+  .hero .wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2.5rem;
   }
-  h1 em{font-style:italic}
   .hero p{
-    margin-top:1.75rem;
     max-width:var(--measure);
     color:var(--quiet);
     font-size:clamp(1.05rem,1.6vw,1.2rem);
   }
   .hero p strong{color:var(--ink);font-weight:500}
-  .hero .status{
-    margin-top:1.75rem;
-    font-size:.85rem;
-    color:var(--quiet);
+  .hero-shot{
+    flex-shrink:0;
+    width:clamp(11rem,28vw,15rem);
+    border:1px solid var(--ink);
+    border-radius:1.5rem;
+    overflow:hidden;
+  }
+  .hero-shot img{display:block;width:100%;height:auto}
+
+  @media (min-width:56rem){
+    .hero .wrap{flex-direction:row;align-items:center;justify-content:space-between;text-align:left}
+    .hero-text{flex:1}
   }
 
   /* ---------- footer ---------- */
@@ -94,9 +98,12 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <h1>Your friends are closer than <em>you think.</em></h1>
-      <p>You and a friend are in the same city — and <strong>neither of you knows it</strong>. Link lets you share your whereabouts with the people you choose, see who&rsquo;s nearby, and make plans in a few taps.</p>
-      <p class="status">Currently in development.</p>
+      <div class="hero-text">
+        <p>We&rsquo;re building an app to fix a problem new grads and young adults know well: you and a friend are in the same city, and neither of you know it. Link lets you share your whereabouts with people you choose, see who&rsquo;s nearby, and make plans in a few taps.</p>
+      </div>
+      <div class="hero-shot">
+        <img src="assets/screenshot-whos-around.png" alt="Link app screenshot showing a &quot;Who&rsquo;s around&quot; screen with nearby friends and their availability">
+      </div>
     </div>
   </section>
 </main>
